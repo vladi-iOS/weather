@@ -7,6 +7,7 @@ target 'Weather' do
 
   # Pods for Weather
   pod 'Moya/RxSwift'
+  pod 'RxCocoa'
   pod 'AlamofireImage'
 
   target 'WeatherTests' do
