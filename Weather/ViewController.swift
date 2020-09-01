@@ -24,8 +24,12 @@ class ViewController: UIViewController {
         return dateFormatter
     }()
     
+    let viewModel = ViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.makeRequest()
         
         let provider = MoyaProvider<OpenWeatherAPI>(plugins: [NetworkLoggerPlugin()])
         provider.request(.forecast){ [weak self] result in

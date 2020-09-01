@@ -12,11 +12,15 @@ import RxCocoa
 import Moya
 
 class ViewModel {
-    var openWeatherAPI = MoyaProvider<OpenWeatherAPI>
+    var openWeatherAPI = MoyaProvider<OpenWeatherAPI>()
     
     
     func makeRequest() {
-        openWeatherAPI.rx
+        let result = openWeatherAPI
+            .rx
+            .request(.forecast)
+            .map([List].self)
+        print(result)
     }
 }
 
